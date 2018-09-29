@@ -1,0 +1,14 @@
+<%= form_with(model:@picture,local:true ,url: choose_new_or_edit) do |f| %>
+  <p>
+    <%= f.label :画像 %>
+    <%= image_tag @picture.image if @picture.image.url %>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :本文 %>
+    <%= f.text_field :content %>
+  </p>
+  <%= f.submit "投稿"%>
+<%end%>
+
+<%= link_to "picture一覧",pictures_path%>

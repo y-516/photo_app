@@ -1,0 +1,17 @@
+<h1>pictures一覧</h1>
+<%= notice %>
+<table>
+  <tr>
+    <td>本文</td>
+    <td>画像</td>
+  </tr>
+  <% @picture.each do |picture|%>
+  <tr>
+    <td><%= picture.content%></td>
+    <td><%= image_tag picture.image%></td>
+    <td><%= link_to "編集",edit_picture_path(picture.id)%></td>
+    <td><%= link_to "削除",picture_path(picture.id),method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<%end%>
+</table>
+<%= link_to "投稿ページ", new_picture_path%>
