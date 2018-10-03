@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture,only:[:edit,:update,:destroy]
+  before_action :logged_in,only:[:new,:edit,:show,:destroy]
 
   def index
     @picture = Picture.all.order(created_at: :desc)
@@ -15,8 +16,13 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(picture_params)
-    @picture.save
-    redirect_to pictures_path,notice:"投稿しました"
+    @picture.user_id = current_user.id
+    if @picture.save
+      ContactMailer.contact_mail(@picture).deliver
+      redirect_to pictures_path,notice:"投稿しました"
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -37,6 +43,12 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
+  end
+
+  def show
+    @picture = Picture.find_by(id:params[:id])
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   private
@@ -48,4 +60,12 @@ class PicturesController < ApplicationController
   def set_picture
     @picture = Picture.find(params[:id])
   end
+
+  def logged_in
+    if logged_in? != true
+      redirect_to new_session_path
+    end
+
+  end
+
 end

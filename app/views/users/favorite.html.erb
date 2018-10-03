@@ -1,0 +1,5 @@
+<h1><%=@user.name%>さんのお気に入り一覧</h1>
+<% @favorite_pictures.each do |favorite_pictures| %>
+  <p><%=favorite_pictures.content%></p>
+  <p><%=image_tag favorite_pictures.image%></p>
+<%end%>

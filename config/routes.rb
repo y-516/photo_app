@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  root to: 'pictures#index'
+  resources :users do
+    member do
+      get 'favorite'
+    end
+  end
+  resources:favorites,only:[:create,:destroy]
+  get 'sessions/new'
+  resources :sessions,only:[:new,:create,:destroy]
+
+  root to: 'sessions#new'
   resources :pictures do
     collection do
       post :confirm
