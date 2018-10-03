@@ -5,15 +5,15 @@
     <td>本文</td>
     <td>画像</td>
   </tr>
-  <% @picture.each do |picture|%>
+  <!-- <% @picture.each do |picture|%>
   <tr>
     <td><%= picture.user.name%></td>
     <td><%= picture.content%></td>
     <td><%= image_tag picture.image%></td>
     <td><%= link_to "編集",edit_picture_path(picture.id)%></td>
     <td><%= link_to "削除",picture_path(picture.id),method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-    <!-- <td><%= link_to "お気に入り",picture_path(picture.id)%></td> -->
+    <td><%= link_to "お気に入り",picture_path(picture.id)%></td>
   </tr>
-<%end%>
+<%end%> -->
 </table>
 <%= link_to "投稿ページ", new_picture_path%>
