@@ -44,6 +44,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do

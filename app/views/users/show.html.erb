@@ -1,3 +1,6 @@
+<p><%= notice %></p>
 <h1><%= @user.name %>のページ</h1>
-
+<p><%=image_tag @user.image%></p>
 <p>メールアドレス: <%= @user.email %></p>
+
+<%= link_to "編集する", edit_user_path(current_user.id) %>

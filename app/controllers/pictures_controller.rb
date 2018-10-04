@@ -4,6 +4,7 @@ class PicturesController < ApplicationController
 
   def index
     @picture = Picture.all.order(created_at: :desc)
+    @current_user = current_user
   end
 
   def new

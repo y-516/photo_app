@@ -11,14 +11,13 @@
   <body>
     <% if logged_in? %>
     <p>ログイン中</p>
-    <p><%=@current_user.id%></p>
+      <%= link_to "投稿ページ", new_picture_path%>
       <%= link_to "お気に入り一覧",favorite_user_path(current_user.id)%>
       <%= link_to "投稿一覧へ", pictures_path %>
-      <%= link_to "Profile", user_path(current_user.id) %>
+      <%= link_to "ユーザープロフィール", user_path(current_user.id) %>
       <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
     <% else %>
     	<p>ログインしてない</p>
-      <%= link_to "投稿一覧へ", pictures_path %>
       <%= link_to "アカウント作成", new_user_path %>
       <%= link_to "ログイン", new_session_path %>
     <% end %>
