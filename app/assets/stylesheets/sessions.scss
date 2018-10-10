@@ -1,3 +1,50 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.session_new_form{
+  height:380px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  width: 350px;
+  position: absolute;
+  top:200px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  text-align:center;
+}
+.session_new_form h1{
+  font-size:4em;
+  font-family: cursive;
+}
+.session_new_form input{
+  height:30px;
+  width:250px;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
+.session_form{
+  background: #fafafa;
+}
+.session_submit{
+  font-size:1.5em;
+  color:white;
+  background:#1E90FF;
+}
+/////////////////////////////////////////
+.session_new_account{
+  height:80px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;;
+  width: 350px;
+  position: absolute;
+  top:500px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  margin-top:90px;
+  font-size:1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

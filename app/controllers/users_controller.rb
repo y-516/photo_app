@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_picture = Picture.where(user_id: @user.id)
+    @favorite_pictures = @user.favorite_pictures
+
   end
 
   def favorite
@@ -28,7 +31,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
    if @user.update(user_params)
-     redirect_to user_path(current_user.id), notice: "編集しました"
+     redirect_to user_path(current_user.id), notice: "プロフィールを編集しました"
    else
      render 'edit'
    end

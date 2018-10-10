@@ -1,25 +1,31 @@
-<h1>編集</h1>
-
-<%= form_with(model:@user ,local:true) do |f|%>
-
-<% if @user.errors.any? %>
- <div id="error_explanation">
-  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
-  <ul>
-   <% @user.errors.full_messages.each do |message| %>
-     <li><%= message %></li>
+<div class="users_edit_outerframe">
+  <h1>プロフィールを編集</h1>
+  <%= form_with(model:@user ,local:true) do |f|%>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+        <ul>
+         <% @user.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+          <% end %>
+         </ul>
+     </div>
+     <% end %>
+     <div class="users_edit_inframe">
+       <div class="users_edit_img">
+         <%= image_tag @user.image%>
+       </div>
+       <div class="users_edit_name_img">
+         <p>ユーザー名</p>
+         <p><%= @user.name%></p>
+         <%= f.label :プロフィール写真を変更 %>
+         <%= f.file_field :image %>
+      </div>
+    </div>
+      <div class="users_edit_name_form">
+     <%= f.label :ユーザー名変更%>
+     <%= f.text_field :name%>
+      </div>
+     <p><%= f.submit "編集" %></p>
    <% end %>
-   </ul>
- </div>
- <% end %>
-
-<%= f.label :名前%>
-<%= f.text_field :name%>
-
-<%= f.label :画像 %>
-<%= f.file_field :image %>
-
-
-
- <%= f.submit "編集" %>
- <% end %>
+</div>

@@ -1,6 +1,30 @@
-<p><%= notice %></p>
-<h1><%= @user.name %>のページ</h1>
-<p><%=image_tag @user.image%></p>
-<p>メールアドレス: <%= @user.email %></p>
-
-<%= link_to "編集する", edit_user_path(current_user.id) %>
+<div class ="users_show_outerframe">
+    <h1><%= notice %></h1>
+    <div class ="users_show">
+      <div class="users_show_img">
+      <%=image_tag @user.image%>
+      </div>
+        <div class="users_show_link">
+          <span><%= @user.name %></span>
+          <span><%= link_to "プロフィールを編集する", edit_user_path(current_user.id) %></span>
+        </div>
+    </div>
+  <div class="users_show_content">
+  <ul class="tab">
+      <li class="select">投稿</li>
+      <li>お気に入り</li>
+  </ul>
+  <ul class="content" >
+      <li>
+        <% @user_picture.each do |user_picture| %>
+          <%=image_tag user_picture.image%>
+        <%end%>
+      </li>
+      <li class="hide">
+        <% @favorite_pictures.each do |favorite_pictures| %>
+          <%=image_tag favorite_pictures.image%>
+        <%end%>
+      </li>
+  </ul>
+  </div>
+</div>

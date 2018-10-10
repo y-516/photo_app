@@ -1,19 +1,32 @@
-<h1>pictures一覧</h1>
-<%= notice %>
-<table>
-  <tr>
-    <td>本文</td>
-    <td>画像</td>
-  </tr>
-  <% @picture.each do |picture|%>
-  <tr>
-    <td><%= picture.content%></td>
-    <td><%= image_tag picture.image%></td>
-    <td><%= link_to "お気に入り",picture_path(picture.id)%></td>
-    <% if @current_user.id == picture.user_id%>
-    <td><%= link_to "編集",edit_picture_path(picture.id)%></td>
-    <td><%= link_to "削除",picture_path(picture.id),method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+<div class="picture_index_user_outside">
+<h1><%= notice %></h1>
+    <% @picture.each do |picture|%>
+    <div class ="picture_content">
+        <div class="picture_index_user_image_header">
+          <ul>
+            <li><%= image_tag picture.user.image%></li>
+            <li class ="li_size"><%=picture.user.name%></li>
+          </ul>
+        </div>
+        <div class="picture_image_framein">
+        <p><%= image_tag picture.image%></p>
+        </div>
+        <div class="picture_image_menu">
+          <ul>
+            <% if @current_user.id == picture.user_id%>
+            <li class ="li_size"><%= link_to "編集",edit_picture_path(picture.id)%></li>
+            <li class ="li_size"><%= link_to "削除",picture_path(picture.id),method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
+            <%else%>
+            <li class ="li_size"><%= link_to "お気に入り",picture_path(picture.id)%></li>
+            <%end%>
+          </ul>
+        </div>
+        <div class="picture_footer">
+          <ul>
+            <li class ="li_size"><%=picture.user.name%></li>
+            <li class ="li_size"><%= picture.content%></li>
+          </ul>
+        </div>
+      </div>
     <%end%>
-  </tr>
-<%end%>
-</table>
+</div>

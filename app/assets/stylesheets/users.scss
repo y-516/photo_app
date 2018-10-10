@@ -1,3 +1,150 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users_new_from{
+  height:600px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;;
+  width: 350px;
+  position: absolute;
+  top:100px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  text-align:center;
+}
+.users_new_from h1{
+  font-size:4em;
+  font-family: cursive;
+}
+.users_new_from h2{
+  font-size:2em;
+  color:#999;
+}
+.users_new_from input{
+  height:30px;
+  width:250px;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
+ul{
+  list-style:none;
+}
+.users_form{
+  background: #fafafa;
+}
+.users_submit{
+  font-size:1.5em;
+  color:white;
+  background:#1E90FF;
+}
+
+//////////////////////////////
+.users_new_account{
+  height:80px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;;
+  width: 350px;
+  position: absolute;
+  top:620px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  margin-top:90px;
+  font-size:1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//////////////////////
+.users_show_outerframe{
+  text-align:center;
+}
+.users_show{
+  margin:50px auto;
+  height: 200px;
+  width: 1000px;
+}
+.users_show img{
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+}
+.users_show_img{
+  width: 400px;
+  height: 200px;
+  float: left;
+}
+.users_show_link{
+  height: 200px;
+  width: 500px;
+  float: left;
+  font-size:2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.users_show_link span{
+  margin:10px;
+}
+.users_show_content{
+  clear: both;
+}
+////////////////////////////////
+.tab {
+    list-style:none;
+    overflow:hidden;
+    border-top: 1px solid #e6e6e6;
+}
+.tab li {
+  font-size: 1rem;
+    background:#ccc;
+    padding:5px 25px;
+    float:left;
+    margin-right:1px;
+}
+.tab li.select {
+    background:#eee;
+}
+.content {
+    list-style:none;
+}
+.content li{
+    background:#eee;
+    padding:20px;
+}
+.hide {
+    display:none;
+}
+.content img{
+  margin:5px;
+  height: 300px;
+  width:300px;
+}
+///////////////////////////
+.users_edit_outerframe{
+text-align:center;
+}
+.users_edit_outerframe img{
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+}
+.users_edit_inframe{
+  width: 100%;
+  text-align:center;
+
+}
+.users_edit_img{
+  width:400px;
+  display: inline-block;
+
+}
+.users_edit_name_img{
+  font-size:1.5rem;
+  width:400px;
+  display: inline-block;
+}
+.users_edit_name_form{
+  font-size:1.5rem;
+}

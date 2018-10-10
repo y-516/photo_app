@@ -66,7 +66,6 @@ class PicturesController < ApplicationController
     if logged_in? != true
       redirect_to new_session_path
     end
-
   end
 
 end

@@ -1,29 +1,24 @@
- <h1>アカウントを登録</h1>
-
- <%= form_with(model:@user ,local:true) do |f|%>
-
- <% if @user.errors.any? %>
-  <div id="error_explanation">
-   <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
-   <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<div class="users_new_from">
+  <h1>photo_app</h1>
+  <h2>友達の写真やコメントをチェックしよう</h2>
+   <%= form_with(model:@user ,local:true) do |f|%>
+   <% if @user.errors.any? %>
+    <div id="error_explanation">
+     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+     <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
     <% end %>
-    </ul>
-  </div>
+  <p><%= f.text_field :name, placeholder: "ユーザーネーム" ,:class =>'users_form'%></p>
+  <p><%= f.email_field :email, placeholder: "メールアドレス" ,:class =>'users_form'%></p>
+  <p><%= f.password_field :password, placeholder: "パスワード" ,:class =>'users_form'%></p>
+  <p><%= f.password_field :password_confirmation, placeholder: "パスワード確認" ,:class =>'users_form'%></p>
+  <p><%= f.submit "登録する", :class =>'users_submit' %></p>
   <% end %>
-
- <%= f.label :名前%>
- <%= f.text_field :name%>
-
- <%= f.label :メールアドレス %>
-  <%= f.email_field :email %>
-
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
-
-  <%= f.label :パスワード確認 %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "登録" %>
-  <% end %>
+</div>
+<div class="users_new_account">
+  <p>アカウントをお持ちですか?<%=link_to "ログインする",new_session_path%></p>
+</div>
