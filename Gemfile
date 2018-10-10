@@ -37,6 +37,7 @@ gem 'mini_magick'
 gem 'bcrypt', '3.1.11'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'evil_icons'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,7 +51,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'jquery-turbolinks'
-  gem 'evil_icons'
 end
 
 group :development do

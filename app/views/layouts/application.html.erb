@@ -2,23 +2,38 @@
 <html>
   <head>
     <title>PhotoApp</title>
-    <%= evil_icons_sprite %>
     <%= csrf_meta_tags %>
+    <%= evil_icons_sprite %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <header>
+      
       <nav>
         <% if logged_in? %>
           <ul>
-            <li ><%= link_to "投稿", new_picture_path%></li>
-            <li><%= link_to "一覧",pictures_path%></li>
-            <li><%= link_to "ユーザープロ",user_path(current_user.id)%></li>
-            <li><%= link_to  "ログアウト",session_path(current_user.id), method: :delete%></li>
+            <li ><%= link_to new_picture_path, :style=>"text-decoration: none;" do%>
+              <%= evil_icon 'ei-plus', size: :m %>
+              <%end%>
+            </li>
+            <li><%= link_to pictures_path ,:style=>"text-decoration: none;" do %>
+              <%= evil_icon 'ei-sc-instagram', size: :m %>
+              <%end%>
+            </li>
+            <li><%= link_to user_path(current_user.id),
+              data: {"turbolinks" => false} , :style=>"text-decoration: none;" do%>
+              <%= evil_icon 'ei-user', size: :m %>
+              <%end%>
+            </li>
+            <li><%= link_to  session_path(current_user.id), method: :delete, :style=>"text-decoration: none;" do %>
+              <%= evil_icon 'ei-close-o', size: :m %>
+              <%end%>
+            </li>
           </ul>
         <% end %>
         </nav>
+
       </header>
     <%= yield %>
     <footer>
