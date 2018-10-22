@@ -2,7 +2,11 @@
 
 写真投稿アプリ
 
-Things you may want to cover:
+概要
+写真を自由に投稿できます
+
+コンセプト
+シンプルな見た目
 
 * Ruby version
 
