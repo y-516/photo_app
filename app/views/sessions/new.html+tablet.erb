@@ -1,0 +1,14 @@
+  <div class ="session_new_form">
+    <h1>タブレット用photo_app</h1>
+    <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      <p><%= f.email_field :email , placeholder: "メールアドレス" ,:class =>'session_form'%></p>
+      <p><%= f.password_field :password ,placeholder:"パスワード" ,:class =>'session_form'%></p>
+      <p><%= f.submit "ログイン" , :class =>'session_submit' %></p>
+    <% end %>
+  </div>
+  <div class="session_new_account">
+    <p>アカウントをお持ちでない方はこちら<%=link_to "登録する",new_user_path%></p>
+  </div>
