@@ -1,11 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####写真投稿アプリ
 
-Things you may want to cover:
+###写真投稿アプリ
+=
+##写真投稿アプリ
+=
+#写真投稿アプリ
+=
 
-* Ruby version
+概要
+=
+写真を自由に投稿できます
+
+コンセプト
+=
+シンプルな見た目
+
+バージョン
+=
+5.5.5
 
 * System dependencies
 
