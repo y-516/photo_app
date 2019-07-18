@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :detect_devise_variant
   def new
   end
 
@@ -17,5 +18,14 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     flash[:notice] = 'ログアウトしました'
     redirect_to new_session_path
+  end
+  private
+  def detect_devise_variant  # (1)と同じ名前
+      case request.user_agent
+      when /iPad/
+          request.variant = :tablet
+      when /iPhone/
+          request.variant = :mobile
+      end
   end
 end
