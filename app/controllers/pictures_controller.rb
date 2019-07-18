@@ -29,6 +29,12 @@ class PicturesController < ApplicationController
   def edit
   end
 
+
+  def look
+    @comments = @picture.comments
+    @comment = @picture.comments.build
+  end
+
   def update
     if @picture.update(picture_params)
       redirect_to pictures_path,notice:"編集しました"

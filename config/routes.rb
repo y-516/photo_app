@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :users do
     member do
       get 'favorite'
@@ -10,6 +11,10 @@ Rails.application.routes.draw do
 
   root to: 'sessions#new'
   resources :pictures do
+    resources:comments
+    member do
+      get 'look'
+    end
     collection do
       post :confirm
     end

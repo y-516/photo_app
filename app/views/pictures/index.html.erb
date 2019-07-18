@@ -13,6 +13,7 @@
         </div>
         <div class="picture_image_menu">
           <ul>
+            <li class ="li_size"><%= link_to "詳細",look_picture_path(picture.id)%></li>
             <% if @current_user.id == picture.user_id%>
             <li class ="li_size"><%= link_to "編集",edit_picture_path(picture.id)%></li>
             <li class ="li_size"><%= link_to "削除",picture_path(picture.id),method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
